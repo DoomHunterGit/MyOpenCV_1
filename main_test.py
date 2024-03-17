@@ -1,10 +1,9 @@
 import cv2
+import argparse
+ 
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True, help="img/K_2017.jpeg")
+args = vars(ap.parse_args())
 
-# Load an image
-image = cv2.imread("C:\Users\Родион\Pictures\Костя_2017.jpeg")
-
-# Display the image
-cv2.imshow("OpenCV Image", image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+image = cv2.imread(args["image"], cv2.IMREAD_GRAYSCALE)
 # end
